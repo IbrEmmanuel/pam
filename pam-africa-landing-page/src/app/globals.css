@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-[#000000] overflow-x-hidden;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Custom styles for prose content (journal articles) */
+.prose a {
+  color: #2563eb; /* blue-600 */
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose blockquote {
+  border-left-color: #d1d5db; /* gray-300 */
+  font-style: italic;
+  color: #374151; /* gray-700 */
+}
+
+.admin-editor .tiptap {
+  min-height: 280px;
+  color: #ffffff;
+}
+
+.admin-editor .tiptap p {
+  margin: 0.75rem 0;
+}
+
+.admin-editor .tiptap h1,
+.admin-editor .tiptap h2,
+.admin-editor .tiptap h3,
+.admin-editor .tiptap h4 {
+  font-weight: 500;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.admin-editor .tiptap ul,
+.admin-editor .tiptap ol {
+  margin: 0.75rem 0 0.75rem 1.25rem;
+}
+
+.admin-editor .tiptap blockquote {
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+.admin-editor .tiptap img {
+  max-width: 100%;
+  height: auto;
+}
+
+.admin-editor .tiptap a {
+  text-decoration: underline;
+}

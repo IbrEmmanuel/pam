@@ -1,0 +1,32 @@
+/* match your class names & transforms exactly */
+/* .afterImage {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  transform: translate(100%, 0px);
+}
+
+.thirdImage {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  transform: translate(100%, 0px);
+} */
+.afterImage,
+.thirdImage {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  transform: translate(0, 100%); /* instead of translateX */
+}
+/* .afterImage img {
+  transform: translate(-100%, 0px);
+}
+
+.thirdImage img {
+  transform: translate(-100%, 0px);
+} */
+.afterImage img,
+.thirdImage img {
+  transform: translate(0, -100%); /* instead of translateX(-100%) */
+}
